@@ -22,10 +22,23 @@ public class ValidPhoneNumberConsolePrinter {
     }
 
     public void validateAndPrint(String text){
+
+try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            Pattern pattern = Pattern.compile("^\\(\\d{3}\\) \\d{3}-\\d{4}$|^\\d{3}-\\d{3}-\\d{4}$");
+            while ((line = br.readLine()) != null) {
+                Matcher matcher = pattern.matcher(line);
+                if (matcher.matches()) {
+                    System.out.println(line);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         // исполььзуем возможности класса Pattern
 
         // скомпилируем регулярное віражение регулярное выражение
-        String regex = "hfjwbqpweb";
+        /* String regex = "hfjwbqpweb";
         Pattern pattern = Pattern.compile(regex);
         // сосздаем экземпляр matcher, который будет искать построку согласно шаблону regex
         Matcher matcher = pattern.matcher(text);
@@ -35,7 +48,7 @@ public class ValidPhoneNumberConsolePrinter {
             return; // нашли
         } else {
             return ; // не нашли
-        }
+        }*/
 
     }
 
