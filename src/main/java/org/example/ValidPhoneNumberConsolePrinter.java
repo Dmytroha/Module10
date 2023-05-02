@@ -14,7 +14,8 @@ public class ValidPhoneNumberConsolePrinter {
     public ValidPhoneNumberConsolePrinter() throws FileNotFoundException {
     }
 
-    private String phoneNumberValidationRegexp = "^\\(?\\{3}\\)?[- ]?\\d{3}[- ]?\\d{4}$";
+    private String phoneNumberValidationRegexp = "^\\(\\d{3}\\) \\d{3}-\\d{4}$|^\\d{3}-\\d{3}-\\d{4}$";
+            //"^\\(?\\{3}\\)?[- ]?\\d{3}[- ]?\\d{4}$";
     private String stringFromFile = "";
     private String filePath = "src\\main\\resources\\task1\\file.txt";
 
