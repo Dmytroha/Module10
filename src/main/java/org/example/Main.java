@@ -26,7 +26,7 @@ public class Main {
 
     static{
         applicationProperties=Main.class.getClassLoader().getResource("application.properties");
-        dataLogPath= Objects.requireNonNull(Main.class.getClassLoader().getResource("DataLog")).getPath();
+      //  dataLogPath= Objects.requireNonNull(Main.class.getClassLoader().getResource("DataLog")).getPath();
     }
     private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
 
@@ -36,6 +36,7 @@ public class Main {
         Properties appProp = new Properties();
         try(FileInputStream fis = new FileInputStream(applicationProperties.getPath())){
             appProp.load(fis);
+            dataLogPath=appProp.getProperty("data.log.path");
             LOGGER.info("Data Log path is: {}",dataLogPath);
         }catch(IOException ioe){
             ioe.printStackTrace();

@@ -1,6 +1,6 @@
 package org.example.jsonfactories;
 
-import org.example.jsonfactories.JsonFactory;
+
 
 public class OrderLogRecordJsonFactoryImpl implements JsonFactory {
     @Override
